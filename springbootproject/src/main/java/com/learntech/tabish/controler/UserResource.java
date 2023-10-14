@@ -3,6 +3,7 @@ package com.learntech.tabish.controler;
 import com.learntech.tabish.USerDaoService;
 import com.learntech.tabish.beans.User;
 import com.learntech.tabish.exceptions.UserNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -14,11 +15,12 @@ import java.util.List;
 @RestController
 public class UserResource {
 
+    @Autowired
     private USerDaoService service;
 
-    public UserResource(USerDaoService service) {
-        this.service = service;
-    }
+//    public UserResource(USerDaoService service) {
+//        this.service = service;
+//    }
 
     @GetMapping("/users")
     public List<User> retriveAllUsers(){
